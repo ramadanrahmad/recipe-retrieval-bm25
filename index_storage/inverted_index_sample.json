@@ -1,0 +1,119 @@
+{
+  "corpus_stats": {
+    "total_documents_N": 15593,
+    "average_document_length_avgdl": 22.6252,
+    "vocabulary_size": 5512
+  },
+  "top_terms_sample": {
+    "bawang": {
+      "document_frequency_DF": 14409,
+      "collection_frequency_CF": 31503,
+      "sample_postings_list": {
+        "DOC_00001": 2,
+        "DOC_00002": 1,
+        "DOC_00003": 2,
+        "DOC_00005": 1,
+        "DOC_00006": 2
+      }
+    },
+    "putih": {
+      "document_frequency_DF": 13576,
+      "collection_frequency_CF": 16513,
+      "sample_postings_list": {
+        "DOC_00001": 1,
+        "DOC_00002": 1,
+        "DOC_00003": 1,
+        "DOC_00004": 1,
+        "DOC_00005": 1
+      }
+    },
+    "garam": {
+      "document_frequency_DF": 12856,
+      "collection_frequency_CF": 13930,
+      "sample_postings_list": {
+        "DOC_00001": 1,
+        "DOC_00002": 1,
+        "DOC_00003": 1,
+        "DOC_00004": 1,
+        "DOC_00007": 1
+      }
+    },
+    "merah": {
+      "document_frequency_DF": 10960,
+      "collection_frequency_CF": 18678,
+      "sample_postings_list": {
+        "DOC_00001": 3,
+        "DOC_00003": 3,
+        "DOC_00004": 1,
+        "DOC_00006": 3,
+        "DOC_00007": 1
+      }
+    },
+    "gula": {
+      "document_frequency_DF": 8163,
+      "collection_frequency_CF": 8796,
+      "sample_postings_list": {
+        "DOC_00003": 1,
+        "DOC_00004": 1,
+        "DOC_00006": 1,
+        "DOC_00007": 1,
+        "DOC_00008": 1
+      }
+    },
+    "daun": {
+      "document_frequency_DF": 8052,
+      "collection_frequency_CF": 12007,
+      "sample_postings_list": {
+        "DOC_00001": 2,
+        "DOC_00002": 1,
+        "DOC_00006": 4,
+        "DOC_00008": 1,
+        "DOC_00011": 3
+      }
+    },
+    "cabe": {
+      "document_frequency_DF": 7133,
+      "collection_frequency_CF": 10827,
+      "sample_postings_list": {
+        "DOC_00001": 2,
+        "DOC_00004": 1,
+        "DOC_00006": 3,
+        "DOC_00007": 2,
+        "DOC_00008": 2
+      }
+    },
+    "air": {
+      "document_frequency_DF": 6888,
+      "collection_frequency_CF": 7855,
+      "sample_postings_list": {
+        "DOC_00001": 1,
+        "DOC_00002": 1,
+        "DOC_00003": 1,
+        "DOC_00006": 1,
+        "DOC_00008": 1
+      }
+    },
+    "minyak": {
+      "document_frequency_DF": 5944,
+      "collection_frequency_CF": 6358,
+      "sample_postings_list": {
+        "DOC_00002": 1,
+        "DOC_00003": 1,
+        "DOC_00004": 1,
+        "DOC_00005": 1,
+        "DOC_00006": 1
+      }
+    },
+    "rawit": {
+      "document_frequency_DF": 5785,
+      "collection_frequency_CF": 6109,
+      "sample_postings_list": {
+        "DOC_00001": 1,
+        "DOC_00003": 1,
+        "DOC_00004": 1,
+        "DOC_00011": 1,
+        "DOC_00014": 1
+      }
+    }
+  }
+}
