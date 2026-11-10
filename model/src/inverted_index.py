@@ -130,11 +130,18 @@ class InvertedIndex:
         with open(filepath, "rb") as f:
             data = pickle.load(f)
 
-        self.index = data["index"]
-        self.doc_lengths = data["doc_lengths"]
-        self.avgdl = data["avgdl"]
-        self.N = data["N"]
-        self.vocab = data["vocab"]
+        if isinstance(data, dict):
+            self.index = data.get("index", {})
+            self.doc_lengths = data.get("doc_lengths", {})
+            self.avgdl = data.get("avgdl", 0.0)
+            self.N = data.get("N", 0)
+            self.vocab = data.get("vocab", set(self.index.keys()))
+        else:
+            self.index = getattr(data, "index", {})
+            self.doc_lengths = getattr(data, "doc_lengths", {})
+            self.avgdl = getattr(data, "avgdl", 0.0)
+            self.N = getattr(data, "N", 0)
+            self.vocab = getattr(data, "vocab", set(self.index.keys()))
 
     def export_sample_json(
         self, filepath: str, top_terms: int = 10, postings_limit: int = 5

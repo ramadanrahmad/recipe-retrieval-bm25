@@ -48,3 +48,9 @@ Desktop.ini
 
 # Logs
 *.log
+
+# Matplotlib cache
+.matplotlib/
+
+# Packaged zip
+*.zip

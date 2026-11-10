@@ -128,8 +128,8 @@ def run_full_pipeline_and_generate_artifacts():
             "query": "daging sapi, wortel, pala, seledri, merica",
         },
         {
-            "name": "Skenario 5: Olahan Udang Saus Asam Manis",
-            "query": "udang, bawang bombay, saus tomat, nanas, jeruk nipis",
+            "name": "Skenario 5: Olahan Ikan Asam Manis Segar",
+            "query": "ikan gurame nanas tomat saus bawang bombay",
         },
     ]
 

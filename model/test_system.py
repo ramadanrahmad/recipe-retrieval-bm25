@@ -25,7 +25,7 @@ class TestRecipeIRSystem(unittest.TestCase):
 
     def test_extract_category(self):
         self.assertEqual(extract_category_from_filename("data/dataset-ayam.csv"), "ayam")
-        self.assertEqual(extract_category_from_filename("d:/tki/data/dataset-ikan.csv"), "ikan")
+        self.assertEqual(extract_category_from_filename("folder/data/dataset-ikan.csv"), "ikan")
         self.assertEqual(extract_category_from_filename("dataset-sapi.csv"), "sapi")
 
     def test_preprocessing_steps(self):
