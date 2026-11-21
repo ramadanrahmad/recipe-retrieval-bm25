@@ -313,9 +313,10 @@
                 <i class="bi bi-list-ol text-muted"></i>
               </span>
               <select name="top_k" class="form-select search-input border-start-0" style="font-size: 0.95rem;">
-                <option value="5" {% if top_k == 5 %}selected{% endif %}>Top 5 Resep</option>
-                <option value="10" {% if top_k == 10 %}selected{% endif %}>Top 10 Resep</option>
-                <option value="20" {% if top_k == 20 %}selected{% endif %}>Top 20 Resep</option>
+                <option value="5" {% if top_k == '5' or top_k == 5 %}selected{% endif %}>Top 5 Resep</option>
+                <option value="10" {% if top_k == '10' or top_k == 10 %}selected{% endif %}>Top 10 Resep</option>
+                <option value="20" {% if top_k == '20' or top_k == 20 %}selected{% endif %}>Top 20 Resep</option>
+                <option value="all" {% if top_k == 'all' %}selected{% endif %}>Semua Hasil (All)</option>
               </select>
             </div>
           </div>
@@ -366,7 +367,7 @@
             <i class="bi bi-check2-circle text-success me-2"></i>Hasil Temu Kembali Resep
           </h4>
           <p class="text-muted mb-0" style="font-size: 0.92rem;">
-            Ditemukan <strong>{{ results|length }}</strong> resep terbaik untuk kueri <em>"{{ query }}"</em>
+            Ditemukan <strong>{{ results|length }}</strong> resep {% if top_k == 'all' %}(Semua Hasil){% else %}terbaik{% endif %} untuk kueri <em>"{{ query }}"</em>
             {% if category != 'all' %}(Kategori: <strong>{{ category|upper }}</strong>){% endif %}
             dalam waktu <span class="badge bg-success-subtle text-success fw-bold">{{ duration }} detik</span>.
           </p>

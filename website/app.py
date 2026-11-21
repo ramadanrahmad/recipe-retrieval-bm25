@@ -116,7 +116,7 @@ class BM25SearchEngine:
         # Buat lookup resep cepat berdasarkan DocID sebagai dictionary murni
         self.recipes_map = {str(row["DocID"]): row.to_dict() for _, row in recipes_df.iterrows()}
 
-    def search(self, query: str, top_k: int = 10, category_filter: str = "all") -> Tuple[List[Dict[str, Any]], List[str], float]:
+    def search(self, query: str, top_k: Any = 10, category_filter: str = "all") -> Tuple[List[Dict[str, Any]], List[str], float]:
         start_time = time.time()
         query_tokens = self.preprocessor.preprocess_query(query)
         unique_q_tokens = list(set(query_tokens))
@@ -145,7 +145,15 @@ class BM25SearchEngine:
                     scores[doc_id] = scores.get(doc_id, 0.0) + term_score
 
         # Urutkan berdasarkan skor BM25 tertinggi
-        ranked_docs = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:top_k]
+        sorted_docs = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+        if top_k is not None and str(top_k).lower() != "all":
+            try:
+                k_val = int(top_k)
+                ranked_docs = sorted_docs[:k_val]
+            except ValueError:
+                ranked_docs = sorted_docs[:10]
+        else:
+            ranked_docs = sorted_docs
 
         results = []
         for rank, (doc_id, score) in enumerate(ranked_docs, 1):
@@ -293,7 +301,15 @@ def index():
     """Halaman utama sistem pencarian resep."""
     query = request.args.get("query", "").strip()
     category = request.args.get("category", "all").strip().lower()
-    top_k = int(request.args.get("top_k", 10))
+    top_k_param = request.args.get("top_k", "10").strip().lower()
+
+    if top_k_param == "all":
+        top_k = "all"
+    else:
+        try:
+            top_k = str(int(top_k_param))
+        except ValueError:
+            top_k = "10"
 
     results = []
     tokens = []

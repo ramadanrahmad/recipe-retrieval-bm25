@@ -57,6 +57,17 @@ class TestRecipeSearchApp(unittest.TestCase):
         response = self.client.get("/api/recipe/DOC_INVALID_999999")
         self.assertEqual(response.status_code, 404)
 
+    def test_06_top_k_all(self):
+        """Memeriksa opsi top_k=all menampilkan semua hasil pencarian."""
+        response = self.client.get("/?query=tahu+tempe&top_k=all")
+        self.assertEqual(response.status_code, 200)
+        html = response.data.decode("utf-8")
+        self.assertIn("Semua Hasil", html)
+        results_5, _, _ = search_engine.search("tahu tempe", top_k=5)
+        results_all, _, _ = search_engine.search("tahu tempe", top_k="all")
+        self.assertEqual(len(results_5), 5)
+        self.assertGreater(len(results_all), 5)
+
 
 if __name__ == "__main__":
     unittest.main()
