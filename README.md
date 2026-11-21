@@ -13,8 +13,7 @@ Proyek ini dibagi secara modular ke dalam 2 folder utama:
 ├── model/                  # Pengembangan model, korpus, indeks, & evaluasi
 │   ├── data/               # Korpus 7 kategori resep Cookpad (13.074 resep bersih)
 │   ├── index_storage/      # Serialisasi Inverted Index & Metadata
-│   ├── reports/            # Hasil benchmark metrik (Precision, MAP, MRR, Latensi)
-│   ├── src/                # Modul Python (preprocessor, inverted_index, bm25, evaluator)
+│   ├── reports/            # Laporan draf, panduan presentasi, & visualisasi grafik PNG
 │   ├── model_okapi_bm25.ipynb # Single-file Jupyter Notebook model & pengujian
 │   └── model_okapi_bm25.py    # Skrip pipeline model mandiri
 │
@@ -73,3 +72,4 @@ Buka browser di alamat: **`http://127.0.0.1:5000`**
 ```bash
 python website/test_app.py
 ```
+
