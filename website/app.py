@@ -360,9 +360,10 @@ def api_recipe_detail(doc_id: str):
 
 
 if __name__ == "__main__":
-    # Menjalankan server web di localhost port 5000
+    port = int(os.environ.get("PORT", 5000))
+    # Menjalankan server web
     print("\n==================================================================")
     print("🚀 Server Web Temu Kembali Resep Berhasil Dijalankan!")
-    print("🌐 Buka browser Anda di URL: http://127.0.0.1:5000")
+    print(f"🌐 Buka browser Anda di URL: http://127.0.0.1:{port}")
     print("==================================================================\n")
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=False)
