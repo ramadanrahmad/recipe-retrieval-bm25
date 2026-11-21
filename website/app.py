@@ -231,12 +231,12 @@ def clean_steps_list(raw_text: str) -> List[str]:
 # ======================================================================================
 # INISIALISASI APLIKASI FLASK & PEMUATAN MODEL
 # ======================================================================================
-app = Flask(__name__)
-
-# Konfigurasi Path ke Folder Model
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 MODEL_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "model"))
 STORAGE_DIR = os.path.join(MODEL_DIR, "index_storage")
+
+app = Flask(__name__, template_folder=TEMPLATES_DIR)
 
 INDEX_PKL_PATH = os.path.join(STORAGE_DIR, "inverted_index.pkl")
 META_PKL_PATH = os.path.join(STORAGE_DIR, "recipes_metadata.pkl")
